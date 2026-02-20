@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, MapPin, Phone, Star, Clock, Instagram, Heart, Sparkles, Send, Loader2, ExternalLink, ChevronDown, Info } from 'lucide-react';
 
 // --- CONFIGURACIÓN GEMINI API ---
-const apiKey = ""; // La clave API se inyecta automáticamente en el entorno de ejecución
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
 const callGemini = async (prompt, systemInstruction = "") => {
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`,
-      {
+`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,      {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -21,6 +20,9 @@ const callGemini = async (prompt, systemInstruction = "") => {
     );
 
     if (!response.ok) {
+      // Esto nos chivará el error real si Google se queja
+      const errorData = await response.text();
+      console.error("Respuesta de Google:", errorData);
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
