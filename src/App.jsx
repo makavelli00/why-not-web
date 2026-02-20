@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Phone, Star, Clock, Instagram, Heart, Sparkles, Send, Loader2, ExternalLink, ChevronDown, Info } from 'lucide-react';
+import { MapPin, Clock, Phone, Instagram, Sparkles, Utensils, Star, ChevronRight, Map as MapIcon, Menu, X, Info, ChevronDown, Heart, ExternalLink } from 'lucide-react';
+import photoburger from './assets/Gemini_Generated_Image_2msapp2msapp2msa.png';
+import photoburger2 from './assets/Gemini_Generated_Image_a61ke4a61ke4a61k.png';
 
 // --- CONFIGURACIÓN GEMINI API ---
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
@@ -691,9 +693,9 @@ const App = () => {
             
             {/* IMAGES REMAIN AS UPDATED (High quality visual match) */}
             <div className="order-1 md:order-2 grid grid-cols-2 gap-4">
-              <img src="https://images.unsplash.com/photo-1525164286253-0df98293362b?q=80&w=800&auto=format&fit=crop" alt="Smash Burger con patatas en cesta" className="rounded-sm object-cover h-64 w-full translate-y-8 shadow-lg" />
-              <img src="https://images.unsplash.com/photo-1508737027454-e6454ef45afd?q=80&w=800&auto=format&fit=crop" alt="Tarta de queso Oreo" className="rounded-sm object-cover h-64 w-full shadow-lg" />
-            </div>
+  <img src={photoburger} alt="Burgers Why Not" className="rounded-2xl h-64 w-full object-cover" />
+  <img src={photoburger2} alt="Local Why Not" className="rounded-2xl h-64 w-full object-cover mt-8" />
+</div>
           </div>
         </div>
       </section>
