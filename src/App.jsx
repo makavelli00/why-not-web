@@ -1117,16 +1117,20 @@ const App = () => {
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="h-full min-h-[400px] w-full bg-neutral-900 rounded-sm relative overflow-hidden group">
-              <div className="absolute inset-0 bg-neutral-800 flex items-center justify-center">
-                 <div className="text-center opacity-50">
-                    <MapPin size={48} className="text-[#FFD700] mx-auto mb-2" />
-                    <span className="text-white font-serif text-xl">Mapa Interactivo</span>
-                 </div>
-              </div>
-            </div>
-          </div>
+            {/* Mapa Real de Google Maps */}
+<div className="h-full min-h-[400px] w-full bg-neutral-900 rounded-sm relative overflow-hidden group shadow-2xl">
+  <iframe
+    src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.5411737947043!2d-6.130793324359487!3d36.702958872275005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dc749ed3c3f9f%3A0x4d30b52338815424!2sWhy%20Not%20-%20Burger%20%26%20Cake!5e1!3m2!1ses!2ses!4v1771593818757!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+    width="100%"
+    height="100%"
+    style={{ border: 0, filter: 'grayscale(1) contrast(1.2) invert(0.9)' }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="Ubicación Why Not Burger"
+  ></iframe>
+</div>
+     
 
           <div className="mt-20 pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-end">
             <div>
