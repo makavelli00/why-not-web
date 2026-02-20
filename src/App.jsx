@@ -1030,83 +1030,19 @@ const App = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                   <div className="bg-neutral-800 p-3 rounded-full text-[#FFD700]">
+                  <div className="bg-neutral-800 p-3 rounded-full text-[#FFD700]">
                     <Clock size={20} />
                   </div>
                   <div>
-                    <h5 className="font-semibold text-white">Horario</h5>
-                    
-                    {/* UPDATED HOURS SECTION: Matches user input exactly for Kitchen times */}
-                    <div className="mt-3 space-y-3 text-sm text-neutral-400">
-                      <div className="grid grid-cols-3 gap-2 border-b border-neutral-800 pb-2 mb-2">
-                        <span className="text-white font-medium">Lun - Mar</span>
-                        <span className="col-span-2 text-neutral-500 italic text-right">Cerrado</span>
-                      </div>
-                      
-                      <div className="grid grid-cols-3 gap-2 border-b border-neutral-800 pb-2 mb-2">
-                         <span className="text-white font-medium">Miércoles</span>
-                         <div className="col-span-2 space-y-1 text-right">
-                            <div className="flex justify-between items-center"><span className="text-xs text-neutral-500">Local:</span> <span className="text-white">17:00 – 23:30</span></div>
-                            <div className="flex justify-between items-center text-xs"><span className="text-[#FF8C00]">Cocina:</span> <span>20:00 – 23:00</span></div>
-                         </div>
-                      </div>
-
-                      <div className="grid grid-cols-3 gap-2 border-b border-neutral-800 pb-2 mb-2">
-                         <span className="text-white font-medium">Jueves</span>
-                         <div className="col-span-2 space-y-1 text-right">
-                            <div className="flex justify-between items-center"><span className="text-xs text-neutral-500">Local:</span> <span className="text-white">17:00 – 00:30</span></div>
-                            <div className="flex justify-between items-center text-xs"><span className="text-[#FF8C00]">Cocina:</span> <span>20:00 – 23:30</span></div>
-                         </div>
-                      </div>
-
-                      <div className="grid grid-cols-3 gap-2 border-b border-neutral-800 pb-2 mb-2">
-                         <span className="text-white font-medium">Viernes</span>
-                         <div className="col-span-2 space-y-1 text-right">
-                            <div className="flex justify-between items-center"><span className="text-xs text-neutral-500">Local:</span> <span className="text-white">12:30 – 00:30</span></div>
-                            <div className="flex justify-between items-start text-xs">
-                              <span className="text-[#FF8C00]">Cocina:</span> 
-                              <div className="flex flex-col items-end">
-                                <span>13:30 – 16:30</span>
-                                <span>20:00 – 23:30</span>
-                              </div>
-                            </div>
-                         </div>
-                      </div>
-
-                      <div className="grid grid-cols-3 gap-2 border-b border-neutral-800 pb-2 mb-2">
-                         <span className="text-white font-medium">Sábado</span>
-                         <div className="col-span-2 space-y-1 text-right">
-                            <div className="flex justify-between items-center"><span className="text-xs text-neutral-500">Local:</span> <span className="text-white">12:30 – 00:30</span></div>
-                            <div className="flex justify-between items-start text-xs">
-                              <span className="text-[#FF8C00]">Cocina:</span> 
-                              <div className="flex flex-col items-end">
-                                <span>13:30 – 16:30</span>
-                                <span>20:30 – 00:00</span>
-                              </div>
-                            </div>
-                         </div>
-                      </div>
-
-                      <div className="grid grid-cols-3 gap-2">
-                         <span className="text-white font-medium">Domingo</span>
-                         <div className="col-span-2 space-y-1 text-right">
-                            <div className="flex justify-between items-center"><span className="text-xs text-neutral-500">Local:</span> <span className="text-white">12:30 – 00:00</span></div>
-                            <div className="flex justify-between items-start text-xs">
-                              <span className="text-[#FF8C00]">Cocina:</span> 
-                              <div className="flex flex-col items-end">
-                                <span>13:30 – 16:30</span>
-                                <span>20:00 – 23:00</span>
-                              </div>
-                            </div>
-                         </div>
-                      </div>
-                    </div>
-
+                    <h5 className="font-semibold text-white">Horario de Cocina</h5>
+                    <p className="text-neutral-500 text-sm">Mié - Jue: 20:00 – 23:00</p>
+                    <p className="text-neutral-500 text-sm">Vie - Sáb: 13:30 – 16:30 | 20:00 – 00:00</p>
+                    <p className="text-neutral-500 text-sm">Dom: 13:30 – 16:30 | 20:00 – 23:00</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                   <div className="bg-neutral-800 p-3 rounded-full text-[#FFD700]">
+                  <div className="bg-neutral-800 p-3 rounded-full text-[#FFD700]">
                     <Phone size={20} />
                   </div>
                   <div>
@@ -1117,53 +1053,52 @@ const App = () => {
               </div>
             </div>
 
-            {/* Mapa Real de Google Maps */}
-<div className="h-full min-h-[400px] w-full bg-neutral-900 rounded-sm relative overflow-hidden group shadow-2xl">
+           {/* Mapa Real de Google Maps con Estilo Premium */}
+<div className="h-full min-h-[400px] w-full bg-neutral-900 rounded-2xl relative overflow-hidden group shadow-[0_0_20px_rgba(255,215,0,0.3)] border-2 border-[#FFD700]/20 hover:border-[#FFD700]/50 transition-all duration-500">
   <iframe
-    src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.5411737947043!2d-6.130793324359487!3d36.702958872275005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dc749ed3c3f9f%3A0x4d30b52338815424!2sWhy%20Not%20-%20Burger%20%26%20Cake!5e1!3m2!1ses!2ses!4v1771593818757!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
-    width="100%"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2150.8245532703268!2d-6.130039854763437!3d36.70295888612673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dc749ed3c3f9f%3A0x4d30b52338815424!2sWhy%20Not%20-%20Burger%20%26%20Cake!5e1!3m2!1ses!2ses!4v1771595784376!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"    width="100%"
     height="100%"
-    style={{ border: 0, filter: 'grayscale(1) contrast(1.2) invert(0.9)' }}
+    style={{ border: 0 }}
     allowFullScreen=""
     loading="lazy"
     referrerPolicy="no-referrer-when-downgrade"
-    title="Ubicación Why Not Burger"
+    title="Ubicación Why Not Burger Jerez"
   ></iframe>
-</div>
-     
+            </div>
+          </div>
 
           <div className="mt-20 pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-end">
             <div>
-               <p className="text-neutral-600 text-sm">© {new Date().getFullYear()} Why Not Burger & Cake. Todos los derechos reservados.</p>
-               
-               {/* AI EXCUSE GENERATOR */}
-               <div className="mt-6 p-4 bg-neutral-900/50 border border-neutral-800 rounded-lg max-w-md">
-                 <div className="flex items-center gap-2 mb-2">
-                   <Sparkles size={14} className="text-[#FFD700]" />
-                   <span className="text-xs uppercase tracking-widest text-[#FFD700]">¿Dudas? Why Not?</span>
-                 </div>
-                 <p className="text-sm text-neutral-400 min-h-[40px] italic">
-                   {excuse || '¿Necesitas una excusa para pedirte esa burger? Dale al botón.'}
-                 </p>
-                 <button 
+              <p className="text-neutral-600 text-sm">© {new Date().getFullYear()} Why Not Burger & Cake. Todos los derechos reservados.</p>
+              
+              {/* AI EXCUSE GENERATOR */}
+              <div className="mt-6 p-4 bg-neutral-900/50 border border-neutral-800 rounded-lg max-w-md">
+                <div className="flex items-center gap-2 mb-2">
+                  <Sparkles size={14} className="text-[#FFD700]" />
+                  <span className="text-xs uppercase tracking-widest text-[#FFD700]">¿Dudas? Why Not?</span>
+                </div>
+                <p className="text-sm text-neutral-400 min-h-[40px] italic">
+                  {excuse || '¿Necesitas una excusa para pedirte esa burger? Dale al botón.'}
+                </p>
+                <button 
                   onClick={generateExcuse}
                   disabled={isGeneratingExcuse}
                   className="text-xs text-white border-b border-white/30 hover:text-[#FFD700] hover:border-[#FFD700] mt-2 pb-0.5 transition-colors disabled:opacity-50"
-                 >
-                   {isGeneratingExcuse ? 'Consultando a los filósofos...' : 'Dame una razón'}
-                 </button>
-               </div>
+                >
+                  {isGeneratingExcuse ? 'Consultando a los filósofos...' : 'Dame una razón'}
+                </button>
+              </div>
             </div>
 
             <div className="flex gap-6 mt-4 md:mt-0">
-               <a 
-                 href="https://www.instagram.com/whynotburgercake/?hl=es" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="flex items-center gap-2 text-[#FFD700] hover:text-[#FFD700]"
-               >
-                 <Instagram size={16} /> @whynotburgercake
-               </a>
+              <a 
+                href="https://www.instagram.com/whynotburgercake/?hl=es" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[#FFD700] hover:text-[#FFD700]"
+              >
+                <Instagram size={16} /> @whynotburgercake
+              </a>
             </div>
           </div>
         </div>
@@ -1175,22 +1110,8 @@ const App = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform duration-300 flex items-center justify-center group"
-        aria-label="Contactar por WhatsApp"
       >
-        <svg
-          viewBox="0 0 24 24"
-          width="32"
-          height="32"
-          stroke="currentColor"
-          strokeWidth="2"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="fill-white stroke-none"
-        >
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        {/* Tooltip on hover */}
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span className="absolute right-full mr-4 bg-white text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg pointer-events-none">
           ¡Pide por WhatsApp!
         </span>
