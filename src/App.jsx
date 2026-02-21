@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { MapPin, Clock, Phone, Instagram, Sparkles, Utensils, Star, ChevronRight, Map as MapIcon, Menu, X, Info, ChevronDown, Heart, ExternalLink } from 'lucide-react';
 import photoburger from './assets/Gemini_Generated_Image_2msapp2msapp2msa.png';
@@ -529,20 +530,25 @@ const App = () => {
           </a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center text-sm tracking-widest uppercase font-medium">
-            {['Filosofía', 'Menú', 'Experiencia', 'Ubicación'].map((item) => (
-              <button 
-                key={item} 
-                onClick={() => scrollToSection(item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))}
-                className="hover:text-[#FFD700] transition-colors duration-300"
-              >
-                {item}
-              </button>
-            ))}
-            <button className="px-6 py-2 border border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black transition-all duration-300 rounded-sm">
-              Reservar
-            </button>
-          </div>
+<div className="hidden md:flex space-x-8 items-center text-sm tracking-widest uppercase font-medium">
+  {['Filosofía', 'Menú', 'Experiencia', 'Ubicación'].map((item) => (
+    <button 
+      key={item} 
+      onClick={() => scrollToSection(item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))}
+      className="hover:text-[#FFD700] transition-colors duration-300"
+    >
+      {item}
+    </button>
+  ))}
+  <a 
+    href="https://wa.me/34689069133?text=Hola!%20Me%20gustaría%20hacer%20una%20reserva%20en%20Why%20Not."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-6 py-2 border border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black transition-all duration-300 rounded-sm font-medium"
+  >
+    Reservar
+  </a>
+</div>
 
           {/* Mobile Menu Button */}
           <button onClick={toggleMenu} className="md:hidden text-white z-50 focus:outline-none">
@@ -551,20 +557,25 @@ const App = () => {
         </div>
 
         {/* Mobile Overlay */}
-        <div className={`fixed inset-0 bg-neutral-950 flex flex-col justify-center items-center gap-8 transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
-          {['Filosofía', 'Menú', 'Experiencia', 'Ubicación'].map((item) => (
-            <button 
-              key={item}
-              onClick={() => scrollToSection(item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))}
-              className="text-2xl font-serif text-white hover:text-[#FFD700]"
-            >
-              {item}
-            </button>
-          ))}
-          <button className="px-8 py-3 bg-[#FFD700] text-black font-medium mt-4">
-            Llamar: 689 06 91 33
-          </button>
-        </div>
+<div className={`fixed inset-0 bg-neutral-950 flex flex-col justify-center items-center gap-8 transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
+  {['Filosofía', 'Menú', 'Experiencia', 'Ubicación'].map((item) => (
+    <button 
+      key={item}
+      onClick={() => scrollToSection(item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))}
+      className="text-2xl font-serif text-white hover:text-[#FFD700]"
+    >
+      {item}
+    </button>
+  ))}
+  <a 
+    href="https://wa.me/34689069133?text=Hola!%20Me%20gustaría%20hacer%20una%20reserva%20en%20Why%20Not."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-8 py-3 bg-[#FFD700] text-black font-medium mt-4 rounded-sm text-center w-64"
+  >
+    Reservar por WhatsApp
+  </a>
+</div>
       </nav>
 
       {/* Hero Section */}
@@ -1036,10 +1047,74 @@ const App = () => {
                     <Clock size={20} />
                   </div>
                   <div>
-                    <h5 className="font-semibold text-white">Horario de Cocina</h5>
-                    <p className="text-neutral-500 text-sm">Mié - Jue: 20:00 – 23:00</p>
-                    <p className="text-neutral-500 text-sm">Vie - Sáb: 13:30 – 16:30 | 20:00 – 00:00</p>
-                    <p className="text-neutral-500 text-sm">Dom: 13:30 – 16:30 | 20:00 – 23:00</p>
+                    <h5 className="font-semibold text-white">Horario</h5>
+                    
+                    {/* UPDATED HOURS SECTION: Matches user input exactly for Kitchen times */}
+                    <div className="mt-3 space-y-3 text-sm text-neutral-400">
+                      <div className="grid grid-cols-3 gap-2 border-b border-neutral-800 pb-2 mb-2">
+                        <span className="text-white font-medium">Lun - Mar</span>
+                        <span className="col-span-2 text-neutral-500 italic text-right">Cerrado</span>
+                      </div>
+                      
+                      <div className="grid grid-cols-3 gap-2 border-b border-neutral-800 pb-2 mb-2">
+                         <span className="text-white font-medium">Miércoles</span>
+                         <div className="col-span-2 space-y-1 text-right">
+                            <div className="flex justify-between items-center"><span className="text-xs text-neutral-500">Local:</span> <span className="text-white">17:00 – 23:30</span></div>
+                            <div className="flex justify-between items-center text-xs"><span className="text-[#FF8C00]">Cocina:</span> <span>20:00 – 23:00</span></div>
+                         </div>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-2 border-b border-neutral-800 pb-2 mb-2">
+                         <span className="text-white font-medium">Jueves</span>
+                         <div className="col-span-2 space-y-1 text-right">
+                            <div className="flex justify-between items-center"><span className="text-xs text-neutral-500">Local:</span> <span className="text-white">17:00 – 00:30</span></div>
+                            <div className="flex justify-between items-center text-xs"><span className="text-[#FF8C00]">Cocina:</span> <span>20:00 – 23:30</span></div>
+                         </div>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-2 border-b border-neutral-800 pb-2 mb-2">
+                         <span className="text-white font-medium">Viernes</span>
+                         <div className="col-span-2 space-y-1 text-right">
+                            <div className="flex justify-between items-center"><span className="text-xs text-neutral-500">Local:</span> <span className="text-white">12:30 – 00:30</span></div>
+                            <div className="flex justify-between items-start text-xs">
+                              <span className="text-[#FF8C00]">Cocina:</span> 
+                              <div className="flex flex-col items-end">
+                                <span>13:30 – 16:30</span>
+                                <span>20:00 – 23:30</span>
+                              </div>
+                            </div>
+                         </div>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-2 border-b border-neutral-800 pb-2 mb-2">
+                         <span className="text-white font-medium">Sábado</span>
+                         <div className="col-span-2 space-y-1 text-right">
+                            <div className="flex justify-between items-center"><span className="text-xs text-neutral-500">Local:</span> <span className="text-white">12:30 – 00:30</span></div>
+                            <div className="flex justify-between items-start text-xs">
+                              <span className="text-[#FF8C00]">Cocina:</span> 
+                              <div className="flex flex-col items-end">
+                                <span>13:30 – 16:30</span>
+                                <span>20:30 – 00:00</span>
+                              </div>
+                            </div>
+                         </div>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-2">
+                         <span className="text-white font-medium">Domingo</span>
+                         <div className="col-span-2 space-y-1 text-right">
+                            <div className="flex justify-between items-center"><span className="text-xs text-neutral-500">Local:</span> <span className="text-white">12:30 – 00:00</span></div>
+                            <div className="flex justify-between items-start text-xs">
+                              <span className="text-[#FF8C00]">Cocina:</span> 
+                              <div className="flex flex-col items-end">
+                                <span>13:30 – 16:30</span>
+                                <span>20:00 – 23:00</span>
+                              </div>
+                            </div>
+                         </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
 
@@ -1058,7 +1133,8 @@ const App = () => {
            {/* Mapa Real de Google Maps con Estilo Premium */}
 <div className="h-full min-h-[400px] w-full bg-neutral-900 rounded-2xl relative overflow-hidden group shadow-[0_0_20px_rgba(255,215,0,0.3)] border-2 border-[#FFD700]/20 hover:border-[#FFD700]/50 transition-all duration-500">
   <iframe
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2150.8245532703268!2d-6.130039854763437!3d36.70295888612673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dc749ed3c3f9f%3A0x4d30b52338815424!2sWhy%20Not%20-%20Burger%20%26%20Cake!5e1!3m2!1ses!2ses!4v1771595784376!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"    width="100%"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2150.8245532703268!2d-6.130039854763437!3d36.70295888612673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dc749ed3c3f9f%3A0x4d30b52338815424!2sWhy%20Not%20-%20Burger%20%26%20Cake!5e1!3m2!1ses!2ses!4v1771595784376!5m2!1ses!2ses"
+    width="100%"
     height="100%"
     style={{ border: 0 }}
     allowFullScreen=""
